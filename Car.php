@@ -7,8 +7,7 @@ class Car extends Vehicle{
         'electric'
     ];
     private $energy;
-    private $energyLevel;
-    private $hasParkBrake; 
+    private $energyLevel; 
     
     public function __construct(string $color, int $nbSeats, string $energy)
     {
@@ -17,13 +16,10 @@ class Car extends Vehicle{
 
     }
 
-    public function setParkBrake(bool $hasParkBrake): void
+    public function setParkBrake(): void
     {        
-            if($hasParkBrake === true){
-                throw new Exception("You can't go, your park brake is on ! ");
-            }else
-            {
-                echo "I can go easily <br>";
+            if($this->hasParkBrake == true){
+                $this->hasParkBrake = false;
             }
     }
     public function getParkBrake()

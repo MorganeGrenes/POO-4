@@ -41,24 +41,32 @@ echo $truck1->setStorage(16);
 echo $truck1->isFull();
 
 // echo $tuture->setParkBrake(true);
-echo "<br><br><br>";
-try {
-    $tuture->setParkBrake(false);
-} catch (Exception $hasParkBrake) {
-    echo 'Exception received :' . $hasParkBrake->getMessage();
-}finally{
-    echo 'Fin!';
-}
+// echo "<br><br><br>";
+// try {
+//     $tuture->setParkBrake(false);
+// } catch (Exception $hasParkBrake) {
+//     echo 'Exception received :' . $hasParkBrake->getMessage();
+// }finally{
+//     echo 'Fin!';
+// }
 
 
 $volkswagen = new Car('black', 4, 'gasoline');
 $volkswagen->setCurrentSpeed(0);
 var_dump($volkswagen);
-echo $volkswagen->start(false);
 try {
-    $volkswagen->setParkBrake(true);
-} catch (Exception $hasParkBrake) {
-    echo 'Exception received :' . $hasParkBrake->getMessage();
+    echo $volkswagen->start();
+} catch (Exception $start) {
+    echo 'Exception received :' . $volkswagen->setParkBrake();
 }finally{
     echo 'Ma voiture roule comme un donut';
 }
+var_dump($volkswagen);
+try {
+    echo $volkswagen->start();
+} catch (Exception $start) {
+    echo 'Exception received :' . $volkswagen->setParkBrake();
+}finally{
+    echo 'Ma voiture roule comme un donut';
+}
+var_dump($volkswagen);

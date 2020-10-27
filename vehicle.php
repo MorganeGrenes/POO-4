@@ -1,16 +1,19 @@
 <?php
 
+
+
 abstract class Vehicle
 {
     protected $nbWheels;
     protected $currentSpeed;
     protected $color;
     protected $nbSeats;
-    private $hasParkBrake;
+    protected $hasParkBrake;
     public function __construct(string $color, int $nbSeats)
     {
         $this->color = $color;
         $this->nbSeats = $nbSeats;
+        $this->hasParkBrake = true;
     }
 
     public function forward(): string
@@ -42,10 +45,11 @@ abstract class Vehicle
             $this->currentSpeed = $currentSpeed;
         }
     }
-    public function start($hasParkBrake)
+    public function start()
     {
         $sentence = "";
-        if ($hasParkBrake === true) {
+
+        if ($this->hasParkBrake == true) {
             throw new Exception("I forget my park brake :( !");
         } else {
             while ($this->currentSpeed == 0) {
