@@ -73,8 +73,8 @@ require_once 'Speedometer.php';
 
 
 
-$converter = new Speedometer();
-echo 'Miles : ' . $converter->convertKmToMiles(10);
+
+echo Speedometer::convertKmToMiles(10);
 echo '</br>';
-echo 'Km : ' . $converter->convertMilesToKm(6);
+echo Speedometer::convertMilesToKm(6);
 
