@@ -1,5 +1,6 @@
 <?php
 require_once 'vehicle.php';
+require 'LightableInterface';
 
 class Car extends Vehicle implements LightableInterface{
     const ALLOWED_ENERGIES = [
